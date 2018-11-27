@@ -1,0 +1,31 @@
+---
+- !policy
+  id: ansible
+  owner: !group devops
+  annotations:
+    description: Ansible policy
+  body:
+
+    # Roles
+    - !host
+      id: ansible-controller
+      annotations:
+        hostname: awx-task
+
+    # Secrets
+    - !variable
+      id: ssh-password
+      annotations:
+        description: password for ssh connection
+        
+    - !group users
+    - !permit
+      role: !group users
+      privileges: [ read, execute ]
+      resources: [ !variable ssh-password ]
+
+    # Entitlements
+    - !grant
+      role: !group users
+      members:
+        - !host ansible-controller
