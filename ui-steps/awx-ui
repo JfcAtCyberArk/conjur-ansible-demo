@@ -3,7 +3,7 @@
 3 - Add a source to the inventory using the source from project option
 4 - Sync inventory and check hosts section
 5 - Create template
-6 - Create custom credentials type (AWX>Admin>Credential Types) using the yml fileis in the ui-steps repository 
+6 - Create custom credentials type (AWX>Admin>Credential Types) using the yml files in the ui-steps repository 
 7 - Add the custom credentials to resources (AWX>Resources>Credentials)
 8 - Add the custom credentials in the template
 9 - fullfill the credentials with conjur information
